@@ -30,7 +30,7 @@ export const env = {
         if (!env.supabase.url || !env.supabase.serviceRolekey){
             console.warn('[WARN] Missing SUpabase config. Set SUPABASE_URL and SUPABSE_SERVICE_ROLE_KEY');
         }
-    } else if (!env.[k]){
+    } else if (!env[k]){
         console.warn(`[WARN] Missing env var for ${k}`);
     }
 });
