@@ -21,7 +21,7 @@ export const env = {
     }
 };
 
-['mongoUri', 'jwt', 'qrSigningSecret', 'supabase'].foreach ((k)=>{
+['mongoUri', 'jwt', 'qrSigningSecret', 'supabase'].forEach ((k)=>{
     if (k==='jwt'){
         if (!env.jwt.accessSecret || !env.jwt.refreshSecret){
             console.warn('[WARN] Missing JWT secrets. Set JWT_ACCES_SECRET and JWT_REFRESH_SECRET');
