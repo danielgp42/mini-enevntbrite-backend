@@ -1,7 +1,7 @@
 import { connectMongo } from "./db/mongo.js";
 import {env} from "./config/env.js";
 
-// const app = buildApp();
+const app = buildApp();
 connectMongo().then (()=>{
     application.listen(env.port, ()=>{
         console.log(`[HTTP] Listening on :${env.port}`)
