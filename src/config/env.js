@@ -19,7 +19,7 @@ export const env = {
         bucket: process.env.SUPABASE_BUCKET,
 
     }
-}
+};
 
 ['mongoUri', 'jwt', 'qrSigningSecret', 'supabase'].foreach ((k)=>{
     if (k==='jwt'){
