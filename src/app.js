@@ -5,7 +5,7 @@ import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import routes from './routes/index.js';
 import { env } from './config/env.js';
-//import { errorHandler, notFoundHandler } from './middleware/error.js';
+import { errorHandler, notFoundHandler } from './middlewares/error.js';
 
 export function buildApp() {
     const app = express();
@@ -15,7 +15,7 @@ export function buildApp() {
     app.use(morgan(env.nodeEnv === 'production' ? 'combined' : 'dev'));
     app.get('/healt', (_req, res)=> res.json({ ok: true}));
     app.use('/api', routes);
-    //app.use(notFoundHandler);
-    //app.use(errorHandler);
+    app.use(notFoundHandler);
+    app.use(errorHandler);
     return app;
 }
