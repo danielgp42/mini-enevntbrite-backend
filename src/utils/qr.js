@@ -8,7 +8,7 @@ export function singTicket(ticketId) {
     return h.digest('hex');
 }
 
-export function buildQrPayliad(ticketId) {
+export function buildQrPayload(ticketId) {
     return JSON.stringify({t: ticketId, s: singTicket(ticketId)})
 }
 

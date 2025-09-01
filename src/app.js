@@ -9,6 +9,7 @@ import { errorHandler, notFoundHandler } from './middlewares/error.js';
 
 export function buildApp() {
     const app = express();
+    app.use(helmet());
     app.use(cors({origin: env.corsOrigin, credentials: true}));
     app.use(express.json({limit: '2mb'}));
     app.use(cookieParser());
